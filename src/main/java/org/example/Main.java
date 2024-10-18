@@ -5,6 +5,7 @@ import java.util.Random;
 public class Main {
     private static final double RIDER_MEAN = 30.0;
     private static final double BUS_MEAN = 1200.0;
+    private static final Integer TO_SECONDS_FACTOR = 1000;
 
     public static void main(String[] args) {
         BusStop busStop = new BusStop();
@@ -16,7 +17,7 @@ public class Main {
                     double busArrivalTime = generateExponential(BUS_MEAN, random);
                     busStop.arriveBus();
                     System.out.println("Next bus will arrive in " + busArrivalTime + " seconds.\n");
-                    Thread.sleep((long) (busArrivalTime * 1000));
+                    Thread.sleep((long) (busArrivalTime * TO_SECONDS_FACTOR));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -29,7 +30,7 @@ public class Main {
                     double riderArrivalTime = generateExponential(RIDER_MEAN, random);
                     busStop.addRider();
                     System.out.println("Next rider will arrive in " + riderArrivalTime + " seconds.\n");
-                    Thread.sleep((long) (riderArrivalTime * 1000));
+                    Thread.sleep((long) (riderArrivalTime * TO_SECONDS_FACTOR));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
