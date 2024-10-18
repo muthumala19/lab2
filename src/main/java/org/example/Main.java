@@ -16,7 +16,7 @@ public class Main {
                     double busArrivalTime = generateExponential(BUS_MEAN, random);
                     busStop.arriveBus();
                     System.out.println("Next bus will arrive in " + busArrivalTime + " seconds.\n");
-                    Thread.sleep((long) (busArrivalTime * 100));
+                    Thread.sleep((long) (busArrivalTime * 1000));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -29,7 +29,7 @@ public class Main {
                     double riderArrivalTime = generateExponential(RIDER_MEAN, random);
                     busStop.addRider();
                     System.out.println("Next rider will arrive in " + riderArrivalTime + " seconds.\n");
-                    Thread.sleep((long) (riderArrivalTime * 100));
+                    Thread.sleep((long) (riderArrivalTime * 1000));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
